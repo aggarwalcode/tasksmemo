@@ -34,7 +34,15 @@ Route::get('payment-cancelled',function(){
 	return view('pages.payment-cancelled');
 });
 
+Route::get('payment-cancelled.html',function(){
+	return view('pages.payment-cancelled');
+});
+
 Route::get('payment-successful',function(){
+	return view('pages.payment-successful');
+});
+
+Route::get('payment-successful.html',function(){
 	return view('pages.payment-successful');
 });
 
