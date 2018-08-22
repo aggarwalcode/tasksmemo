@@ -13,9 +13,9 @@ $dbConfig = [
 // for your site.
 $paypalConfig = [
 	'email' => 'ashishaggarwal199611@gmail.com',
-	'return_url' => 'https://phpipnlistener.000webhostapp.com/payment-successful.html',
-	'cancel_url' => 'https://phpipnlistener.000webhostapp.com/payment-cancelled.html',
-	'notify_url' => 'https://phpipnlistener.000webhostapp.com/payments.php'
+	'return_url' => 'https://paypallistener.herokuapp.com/payment-successful.html',
+	'cancel_url' => 'https://paypallistener.herokuapp.com/payment-cancelled.html',
+	'notify_url' => 'https://paypallistener.herokuapp.com/payments.php'
 ];
 $paypalUrl = $enableSandbox ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 'https://www.paypal.com/cgi-bin/webscr';
 // Product being purchased.
