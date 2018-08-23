@@ -24,6 +24,7 @@ $uIdFbase = $_POST["custom"];
 $itemAmount = 1.00;
 // Include Functions
 require 'functions.php';
+
 // Check if paypal request or response
 if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])) {
 	// Grab the post data so that we can set up the query string for PayPal.
@@ -69,11 +70,11 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])) {
 	// We need to verify the transaction comes from PayPal and check we've not
 	// already processed the transaction before adding the payment to our
 	// database.
-	if (verifyTransaction($_POST) && checkTxnid($data['txn_id'])) {
 		if (addPayment($data) !== false) {
 			// Payment successfully added.
 			$ch = curl_init("https://paypallistener.herokuapp.com/");
 			curl_exec($ch);
 		}
-	}
+	
 }
+?>

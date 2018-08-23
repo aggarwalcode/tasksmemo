@@ -93,3 +93,4 @@ function addPayment($data) {
 
 	return true;
 }
+?>
