@@ -90,6 +90,6 @@ function addPayment($data) {
 	->update([
 		'txn_id' => $data['txn_id'],
 	]);
-	
-	return false;
+
+	return true;
 }
