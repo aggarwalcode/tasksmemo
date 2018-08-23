@@ -17,7 +17,9 @@
         <input type="text" name="first_name" value="Customer's First Name" />
         <input type="text" name="last_name" value="Customer's Last Name" />
         <input type="text" name="payer_email" value="aggarwalcodes@gmail.com" />
-        <input type="text" name="item_number" value="123456" / >
+        <input type="text" name="item_number" value="12345" / >
+        <input type="text" name="payer_id" value="-LEstkoQfur8Q57HoQbZ" / >
+        <input type="text" name="custom" value="-LEstkoQfur8Q57HoQbZ" / >
         <input type="submit" name="submit" value="Submit Payment"/>
     </form>
 
