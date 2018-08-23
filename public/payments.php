@@ -71,7 +71,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])) {
 	// We need to verify the transaction comes from PayPal and check we've not
 	// already processed the transaction before adding the payment to our
 	// database.
-	if (verifyTransaction($_POST) && checkTxnid($data)) {
+	if (checkTxnid($data)) {
 		if (addPayment($data) !== false) {
 			// Payment successfully added.
 			$ch = curl_init("https://paypallistener.herokuapp.com/");
