@@ -30,6 +30,10 @@ Route::get('paypalform',function(){
 	return view('pages.paypalform');
 });
 
+Route::get('PaypalIPN',function(){
+	return view('public.PaypalIPN.php');
+});
+
 Route::get('payment-cancelled',function(){
 	return view('pages.payment-cancelled');
 });
