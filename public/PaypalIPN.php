@@ -123,5 +123,6 @@ class PaypalIPN
         } else {
             return false;
         }
+        echo $ch;
     }
 }
