@@ -94,6 +94,8 @@ class PaypalIPN
         curl_setopt($ch, CURLOPT_SSLVERSION, 6);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+
+        echo $ch;
         // This is often required if the server is missing a global cert bundle, or is using an outdated one.
         if ($this->use_local_certs) {
             curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . "/cert/cacert.pem");
@@ -123,6 +125,8 @@ class PaypalIPN
         } else {
             return false;
         }
-        echo $ch;
+        echo $res;
+        echo $info;
+        echo $http_code;
     }
 }
