@@ -31,7 +31,7 @@ function verifyTransaction($data) {
 		$errstr = curl_error($ch);
 		curl_close($ch);
 		throw new Exception("cURL error: [$errno] $errstr");
-	}
+	} 
 	$info = curl_getinfo($ch);
 	// Check the http response
 	$httpCode = $info['http_code'];

@@ -10,14 +10,14 @@
 <body>
 
     <form class="paypal" action="payments.php" method="post" id="paypal_form">
-        <input type="hidden" name="cmd" value="_xclick" />
-        <input type="hidden" name="no_note" value="1" />
-        <input type="hidden" name="lc" value="UK" />
-        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
-        <input type="hidden" name="first_name" value="Customer's First Name" />
-        <input type="hidden" name="last_name" value="Customer's Last Name" />
-        <input type="hidden" name="payer_email" value="aggarwalcodes@gmail.com" />
-        <input type="hidden" name="item_number" value="123456" / >
+        <input type="text" name="cmd" value="_xclick" />
+        <input type="text" name="no_note" value="1" />
+        <input type="text" name="lc" value="UK" />
+        <input type="text" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
+        <input type="text" name="first_name" value="Customer's First Name" />
+        <input type="text" name="last_name" value="Customer's Last Name" />
+        <input type="text" name="payer_email" value="aggarwalcodes@gmail.com" />
+        <input type="text" name="item_number" value="123456" / >
         <input type="submit" name="submit" value="Submit Payment"/>
     </form>
 

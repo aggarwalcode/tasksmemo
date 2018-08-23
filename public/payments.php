@@ -1,7 +1,7 @@
 <?php
 // For test payments we want to enable the sandbox mode. If you want to put live
 // payments through then this setting needs changing to `false`.
-$enableSandbox = true;
+$enableSandbox = false;
 // Database settings. Change these for your database configuration.
 $dbConfig = [
 	'host' => 'localhost',
@@ -20,7 +20,7 @@ $paypalConfig = [
 $paypalUrl = $enableSandbox ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 'https://www.paypal.com/cgi-bin/webscr';
 // Product being purchased.
 $itemName = 'Test Item';
-$itemAmount = 5.00;
+$itemAmount = 1.00;
 // Include Functions
 require 'functions.php';
 // Check if paypal request or response
@@ -42,7 +42,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])) {
 	// and currency so that these aren't overridden by the form data.
 	$data['item_name'] = $itemName;
 	$data['amount'] = $itemAmount;
-	$data['currency_code'] = 'GBP';
+	$data['currency_code'] = 'INR';
 	// Add any custom fields for the query string.
 	//$data['custom'] = USERID;
 	// Build the query string from the data.

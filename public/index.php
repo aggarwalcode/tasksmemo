@@ -23,6 +23,10 @@ define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/../vendor/autoload.php';
 
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
+
+
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
