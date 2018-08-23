@@ -53,11 +53,27 @@ function verifyTransaction($data) {
  * @param string $txnid Transaction ID
  * @return bool True if the transaction ID has not been seen before, false if already processed
  */
-function checkTxnid($txnid) {
-	global $db;
-	$txnid = $db->real_escape_string($txnid);
-	$results = $db->query('SELECT * FROM `payments` WHERE txnid = \'' . $txnid . '\'');
-	return ! $results->num_rows;
+function checkTxnid($data) {
+	$serviceAccount = ServiceAccount::fromJsonFile('../assignmentsmemo-af86443b7b6b.json');
+
+	$firebase = (new Factory)
+	->withServiceAccount($serviceAccount)
+	->create();
+
+	$database = $firebase->getDatabase();
+
+	
+	//	Post Data To Firebase
+	$uIdFbase = $data['custom'];
+	$txn_id = $data['txn_id'];
+
+
+	$reference = $database->getReference('tasks/'.$uIdFbase. 'txn_id');
+	$snapshot = $reference->getSnapshot();
+	$value = $snapshot->getValue();
+
+	return $value === $data['txn_id'];	
+
 }
 /**
  * Add payment to database
@@ -82,7 +98,7 @@ function addPayment($data) {
 	$newPost = $database
 	->getReference('tasks/'.$uIdFbase)
 	->update([
-		'taskStatus' => 'completed',
+		'taskStatus' => $data['payment_status'],
 	]);
 
 	$newPost = $database
