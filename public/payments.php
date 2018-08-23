@@ -72,6 +72,8 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])) {
 	if (verifyTransaction($_POST) && checkTxnid($data['txn_id'])) {
 		if (addPayment($data) !== false) {
 			// Payment successfully added.
+			$ch = curl_init("https://paypallistener.herokuapp.com/");
+			curl_exec($ch);
 		}
 	}
 }
