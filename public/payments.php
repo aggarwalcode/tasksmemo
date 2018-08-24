@@ -40,7 +40,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])) {
 	$data['amount'] = $itemAmount;
 	$data['currency_code'] = 'GBP';
 	// Add any custom fields for the query string.
-	//$data['custom'] = $_POST["custom"];;
+	//$data['custom'] = USERID;
 	// Build the query string from the data.
 	$queryString = http_build_query($data);
 	// Redirect to paypal IPN
