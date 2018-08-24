@@ -1,14 +1,8 @@
 <?php
 // For test payments we want to enable the sandbox mode. If you want to put live
 // payments through then this setting needs changing to `false`.
-$enableSandbox = true;
+$enableSandbox = false;
 // Database settings. Change these for your database configuration.
-$dbConfig = [
-	'host' => 'localhost',
-	'username' => 'user',
-	'password' => 'secret',
-	'name' => 'example_database'
-];
 // PayPal settings . Change these to your account details and the relevant URLs
 // for your site.
 $paypalConfig = [
@@ -19,7 +13,7 @@ $paypalConfig = [
 ];
 $paypalUrl = $enableSandbox ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 'https://www.paypal.com/cgi-bin/webscr';
 // Product being purchased.
-$itemName = 'Test Item';
+$itemName = $_POST["item_name"];
 $uIdFbase = $_POST["custom"];
 $itemAmount = 1.00;
 // Include Functions

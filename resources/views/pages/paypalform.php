@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +16,11 @@
         <input type="text" name="first_name" value="Customer's First Name" />
         <input type="text" name="last_name" value="Customer's Last Name" />
         <input type="text" name="payer_email" value="aggarwalcodes@gmail.com" />
-        <input type="text" name="item_number" value="12345" / >
-        <input type="text" name="payer_id" value="-LEstkoQfur8Q57HoQbZ" / >
-        <input type="text" name="custom" value="-LEstkoQfur8Q57HoQbZ" / >
+        <input type="text" name="item_name" value="ITEM NAME" />
+        <input type="text" name="item_number" value="12345" / >    
+        <input type="text" name="payer_id" value="<?php echo $fBaseId[0];?>"/ >
+        <input type="text" name="custom" value="<?php echo $fBaseId[0];?>"/ >
+        
         <input type="submit" name="submit" value="Submit Payment"/>
     </form>
 

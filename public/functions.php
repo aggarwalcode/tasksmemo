@@ -7,10 +7,10 @@
  * @throws Exception
  */
 
-	require '../vendor/autoload.php';
+require '../vendor/autoload.php';
 
-	use Kreait\Firebase\Factory;
-	use Kreait\Firebase\ServiceAccount;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
 
 function verifyTransaction($data) {
 	global $paypalUrl;

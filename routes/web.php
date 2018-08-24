@@ -19,39 +19,32 @@ Route::get('/paypal', 'PayPalController@index');
 
 Route::post('paypal', 'PayPalController@payWithpaypal');
 Route::get('status', 'PayPalController@getPaymentStatus');
-
-
-
-Route::get('verify',function(){
-	return "form is submitted <br> ID:".$_GET['txtid'].$_GET['txtname'];
-});
-
-Route::get('paypalform',function(){
-	return view('pages.paypalform');
-});
-
-
-
-Route::get('payment-cancelled',function(){
-	return view('pages.payment-cancelled');
-});
-
-Route::get('payment-cancelled.html',function(){
-	return view('pages.payment-cancelled');
-});
-
-Route::get('payment-successful',function(){
-	return view('pages.payment-successful');
-});
-
-Route::get('payment-successful.html',function(){
-	return view('pages.payment-successful');
-});
-
 Route::get('search', [
 	'as' => 'search', 
 	'uses' => 'SearchController@search'
 ]);
+Route::get('OrderDetails', [
+	'as' => 'orderPage', 
+	'uses' => 'OrderPageController@orderPage'
+]);
+Route::get('verify',function(){
+	return "form is submitted <br> ID:".$_GET['txtid'].$_GET['txtname'];
+});
+/*Route::get('paypalform',function(){
+	return view('pages.paypalform');
+});*/
+Route::get('payment-cancelled',function(){
+	return view('pages.payment-cancelled');
+});
+Route::get('payment-cancelled.html',function(){
+	return view('pages.payment-cancelled');
+});
+Route::get('payment-successful',function(){
+	return view('pages.payment-successful');
+});
+Route::get('payment-successful.html',function(){
+	return view('pages.payment-successful');
+});
 
 /*Route::get('search', function () {
 
