@@ -15,7 +15,7 @@ $paypalUrl = $enableSandbox ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 
 // Product being purchased.
 $itemName = $_POST["item_name"];
 $uIdFbase = $_POST["custom"];
-$itemAmount = (int)$_POST["invoiceAmt"];
+$itemAmount = 99.00;
 // Include Functions
 require 'functions.php';
 
