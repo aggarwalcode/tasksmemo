@@ -14,7 +14,7 @@ $paypalConfig = [
 $paypalUrl = $enableSandbox ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 'https://www.paypal.com/cgi-bin/webscr';
 // Product being purchased.
 //$uIdFbase = $_POST["custom"];
-$itemName = "$_POST["item_name"]";
+$itemName = "Test Item";
 $itemAmount = 99.00;
 // Include Functions
 require 'functions.php';
