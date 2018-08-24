@@ -20,8 +20,6 @@ $uIdFbase = $fBaseId[0];
 $reference = $database->getReference('tasks/'.$uIdFbase);
 $snapshot = $reference->getSnapshot();
 $value = $snapshot->getValue();
-echo $uIdFbase;
-
 ?>
 
 <!DOCTYPE html>

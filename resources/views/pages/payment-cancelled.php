@@ -10,34 +10,5 @@
 
 	<h1>Payment Cancelled</h1>
 
-		<?php
-
-	require '../vendor/autoload.php';
-
-
-	use Kreait\Firebase\Factory;
-	use Kreait\Firebase\ServiceAccount;
-
-	echo __DIR__;
-	$serviceAccount = ServiceAccount::fromJsonFile('../assignmentsmemo-af86443b7b6b.json');
-
-	$firebase = (new Factory)
-	->withServiceAccount($serviceAccount)
-	->create();
-
-	$database = $firebase->getDatabase();
-
-	
-	//	Post Data To Firebase
-	$var = "-LEstkoQfur8Q57HoQbZ";
-
-	$newPost = $database
-	->getReference('tasks/'.$var)
-	->update([
-		'taskStatus' => 'Payment Cancelled',
-	]);
-
-	?>
-
 </body>
 </html> 
