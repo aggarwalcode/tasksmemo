@@ -1,3 +1,29 @@
+<?php
+
+require '../vendor/autoload.php';
+
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
+
+
+$serviceAccount = ServiceAccount::fromJsonFile('../assignmentsmemo-af86443b7b6b.json');
+
+$firebase = (new Factory)
+->withServiceAccount($serviceAccount)
+->create();
+
+$database = $firebase->getDatabase();
+
+    //  Post Data To Firebase
+$uIdFbase = $fBaseId[0];
+
+$reference = $database->getReference('tasks/'.$uIdFbase);
+$snapshot = $reference->getSnapshot();
+$value = $snapshot->getValue();
+echo $uIdFbase;
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,19 +35,53 @@
 <body>
 
     <form class="paypal" action="payments.php" method="post" id="paypal_form">
-        <input type="text" name="cmd" value="_xclick" />
-        <input type="text" name="no_note" value="1" />
-        <input type="text" name="lc" value="UK" />
-        <input type="text" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
-        <input type="text" name="first_name" value="Customer's First Name" />
-        <input type="text" name="last_name" value="Customer's Last Name" />
-        <input type="text" name="payer_email" value="aggarwalcodes@gmail.com" />
-        <input type="text" name="item_name" value="ITEM NAME" />
-        <input type="text" name="item_number" value="12345" / >    
-        <input type="text" name="payer_id" value="<?php echo $fBaseId[0];?>"/ >
-        <input type="text" name="custom" value="<?php echo $fBaseId[0];?>"/ >
-        
-        <input type="submit" name="submit" value="Submit Payment"/>
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="no_note" value="1" />
+        <input type="hidden" name="lc" value="UK" />
+        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
+        Name: 
+        <input type="text" name="first_name" value="<?php echo $value['name'];?>" /><br><br>
+
+        <input type="text" name="last_name" value="Customer's Last Name" /><br><br>
+
+        Email:
+        <input type="text" name="payer_email" value="<?php echo $value['email'];?>" /><br><br>
+
+        Item Name:    
+        <input type="text" name="item_name" value="I<?php echo $value['email'];?>" /><br><br>
+
+        Item Number:
+        <input type="text" name="item_number" value="<?php echo $value['fBaseId'];?>" / ><br><br>
+
+        Total Amount:    
+        <input type="text" name="amount_total" value="<?php echo $value['amount'];?>" / ><br><br>    
+
+        Country:    
+        <input type="text" name="country" value="<?php echo $value['country'];?>" / ><br><br>
+
+        Currency:    
+        <input type="text" name="currency_code" value="<?php echo $value['currency'];?>" / ><br><br>   
+
+        Invoice Amount:    
+        <input type="text" name="amount" value="<?php echo $value['invoiceAmt'];?>" / ><br><br> 
+
+        Task Status:    
+        <input type="text" name="taskStatus" value="<?php echo $value['taskStatus'];?>" / ><br><br>
+
+        Time:    
+        <input type="text" name="timestamp" value="<?php echo $value['timestamp'];?>" / ><br><br>
+
+        Word Count:    
+        <input type="text" name="wordCount" value="<?php echo $value['wordCount'];?>" / ><br><br>
+
+        <input type="hidden" display="none" name="payer_id" value="<?php echo $value['fBaseId'];?>"/ ><br><br>
+
+        Order Id:    
+        <input type="text" name="payer_id" value="<?php echo $fBaseId[0];?>"/ ><br><br>
+
+        <input type="hidden" name="custom" value="<?php echo $fBaseId[0];?>"/ ><br><br>
+
+        <input type="submit" name="submit" value="Submit Payment"/><br><br>
     </form>
 
 </body>
