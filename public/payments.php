@@ -15,7 +15,7 @@ $paypalUrl = $enableSandbox ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 
 // Product being purchased.
 $itemName = $_POST["item_name"];
 $uIdFbase = $_POST["custom"];
-$itemAmount = $_POST["invoiceAmt"];
+$itemAmount = (int)$_POST["invoiceAmt"];
 // Include Functions
 require 'functions.php';
 
@@ -38,7 +38,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])) {
 	// and currency so that these aren't overridden by the form data.
 	$data['item_name'] = $itemName;
 	$data['amount'] = $itemAmount;
-	$data['currency_code'] = 'GBP';
+	$data['currency_code'] = $_POST["currency"];
 	// Add any custom fields for the query string.
 	$data['custom'] = $uIdFbase;
 	// Build the query string from the data.
