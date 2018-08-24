@@ -58,7 +58,7 @@ $value = $snapshot->getValue();
         <input type="text" name="country" value="<?php echo $value['country'];?>" / ><br><br>
 
         Currency:    
-        <input type="text" name="currency_code" value="<?php echo $value['currency'];?>" / ><br><br>   
+        <input type="text" name="currency" value="<?php echo $value['currency'];?>" / ><br><br>   
 
         Invoice Amount:    
         <input type="text" name="amount" value="<?php echo $value['invoiceAmt'];?>" / ><br><br> 
@@ -72,7 +72,7 @@ $value = $snapshot->getValue();
         Word Count:    
         <input type="text" name="wordCount" value="<?php echo $value['wordCount'];?>" / ><br><br>
 
-        <input type="hidden" display="none" name="payer_id" value="<?php echo $value['fBaseId'];?>"/ ><br><br>
+        <input type="hidden" name="payer_id" value="<?php echo $value['fBaseId'];?>"/ ><br><br>
 
         Order Id:    
         <input type="text" name="payer_id" value="<?php echo $fBaseId[0];?>"/ ><br><br>
