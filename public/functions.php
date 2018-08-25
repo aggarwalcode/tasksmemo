@@ -92,10 +92,14 @@ function addPayment($data) {
 	//	Post Data To Firebase
 	$uIdFbase = $data['custom'];
 
+	$payment_status_var = $data['payment_status'];
+	if($data['payment_status'] == "Completed"){
+		$payment_status_var = "Confirmed";
+	}
 	$newPost = $database
 	->getReference('tasks/'.$uIdFbase)
 	->update([
-		'taskStatus' => $data['payment_status'],
+		'taskStatus' => $payment_status_var,
 	]);
 
 	$newPost = $database
