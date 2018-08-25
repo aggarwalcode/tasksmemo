@@ -61,19 +61,16 @@ function checkTxnid($data) {
 	->create();
 
 	$database = $firebase->getDatabase();
-
 	
 	//	Post Data To Firebase
 	$uIdFbase = $data['custom'];
 	$txn_id = $data['txn_id'];
-
 
 	$reference = $database->getReference('tasks/'.$uIdFbase. 'txn_id');
 	$snapshot = $reference->getSnapshot();
 	$value = $snapshot->getValue();
 
 	return $value === $data['txn_id'];	
-
 }
 /**
  * Add payment to database

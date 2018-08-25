@@ -20,6 +20,8 @@ $uIdFbase = $fBaseId[0];
 $reference = $database->getReference('tasks/'.$uIdFbase);
 $snapshot = $reference->getSnapshot();
 $value = $snapshot->getValue();
+
+$name = explode(" ", $value['name'])
 ?>
 
 <!DOCTYPE html>
@@ -37,10 +39,11 @@ $value = $snapshot->getValue();
         <input type="hidden" name="no_note" value="1" />
         <input type="hidden" name="lc" value="UK" />
         <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
-        Name: 
-        <input type="text" name="first_name" value="<?php echo $value['name'];?>" /><br><br>
+        First Name: 
+        <input type="text" name="first_name" value="<?php echo $name[0];?>" /><br><br>
 
-        <input type="text" name="last_name" value="Customer's Last Name" /><br><br>
+        Last Name:
+        <input type="text" name="last_name" value="<?php echo $name[1];?>" /><br><br>
 
         Email:
         <input type="text" name="payer_email" value="<?php echo $value['email'];?>" /><br><br>
@@ -49,7 +52,7 @@ $value = $snapshot->getValue();
         <input type="text" name="item_name" value="Test Item" /><br><br>
 
         Item Number:
-        <input type="text" name="item_number" value="<?php echo $value['fBaseId'];?>" / ><br><br>
+        <input type="hidden" name="item_number" value="<?php echo $value['fBaseId'];?>" / ><br><br>
 
         Total Amount:    
         <input type="text" name="amount_total" value="<?php echo $value['amount'];?>" / ><br><br>    
