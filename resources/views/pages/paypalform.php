@@ -46,7 +46,7 @@ $value = $snapshot->getValue();
         <input type="text" name="payer_email" value="<?php echo $value['email'];?>" /><br><br>
 
         Item Name:    
-        <input type="text" name="item_name" value="I<?php echo $value['email'];?>" /><br><br>
+        <input type="text" name="item_name" value="Test Item" /><br><br>
 
         Item Number:
         <input type="text" name="item_number" value="<?php echo $value['fBaseId'];?>" / ><br><br>
