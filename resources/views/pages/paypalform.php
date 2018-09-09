@@ -43,7 +43,7 @@ $name = explode(" ", $value['name'])
         <input type="text" name="first_name" value="<?php echo $name[0];?>" /><br><br>
 
         Last Name:
-        <input type="text" name="last_name" value="<?php echo $name[1];?>" /><br><br>
+        <input type="text" name="last_name" value="<?php try {echo $name[1];}catch(Exception $e){}?>" /><br><br>
 
         Email:
         <input type="text" name="payer_email" value="<?php echo $value['email'];?>" /><br><br>
