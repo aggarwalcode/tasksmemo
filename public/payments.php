@@ -6,7 +6,7 @@ $enableSandbox = false;
 // PayPal settings . Change these to your account details and the relevant URLs
 // for your site.
 $paypalConfig = [
-	'email' => 'ashishaggarwal199611@gmail.com',
+	'email' => 'kartikgupta099@gmail.com',
 	'return_url' => 'https://paypallistener.herokuapp.com/payment-successful.html',
 	'cancel_url' => 'https://paypallistener.herokuapp.com/payment-cancelled.html',
 	'notify_url' => 'https://paypallistener.herokuapp.com/payments.php'
